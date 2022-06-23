@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:paddingRight="@dimen/_20sdp">
+
+        <LinearLayout
+            android:id="@+id/homescreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/logofront" />
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="18dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="@drawable/drawable_edittext">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/name" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dp"
+                        android:background="@null"
+                        android:hint="@string/enter_name"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/lt_grey"
+                        android:textSize="@dimen/_12sdp" />
+                    <!--android:padding="@dimen/_8sdp"-->
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edittext">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/key" />
+
+                    <EditText
+                        android:id="@+id/enterRoomId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dp"
+                        android:background="@null"
+                        android:hint="Enter RoomId"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/lt_grey"
+                        android:textSize="@dimen/_12sdp" />
+                    <!--android:padding="@dimen/_8sdp"-->
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/createRoom"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/drawable_btn"
+                        android:clickable="true"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:onClick="createRoom"
+                        android:text="Create Room" />
+                    <TextView
+                        android:id="@+id/joinRoom"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/drawable_btn"
+                        android:clickable="true"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+
+                        android:onClick="joinMeeting"
+                        android:text="@string/btn_join_now" />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/rembermeCb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:checked="false"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/remember_me"
+                    android:theme="@style/MyCheckbox"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>

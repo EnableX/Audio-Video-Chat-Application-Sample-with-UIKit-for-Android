@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UikitSampleApp</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_pin">Enter Pin</string>
+    <string name="remember_me">&#160;&#160;Remember Me</string>
+    <string name="btn_join_now">Join Now</string>
+
+</resources>
