@@ -1,36 +1,58 @@
-# EnableX Video Calling Android app with UIKit
+# EnableX Video Calling Android App with UIKit: Features, Setup, and Customization Guide
 
-This is a sample video calling app that uses EnableX infrastructure, APIs and Toolkit. It allows developers to try out real-time video and audio features on Android.
+Discover the EnableX Video Calling Android app equipped with the powerful UIKit. 
 
-This sample apps allows you to easily:
-* Create a Virtual Room with REST video API 
-* Gain the Room Credentials (i.e. Room ID) 
-* Join Virtual Room either as moderator or partipicant securely
+This sample video calling application harnesses the robust EnableX infrastructure, APIs, and Toolkit to offer Android developers an immersive experience with real-time video and audio capabilities. 
 
-You will also enjoy the following features: 
-## For Participants and Moderators
-* Mute Self-Audio
-* Mute Self-Video
-* Switch Camera
-* Switch Audio Device
-* Group and Private Chat
+With this sample app, you can effortlessly: 
 
-## Participant List
-* Switch Layout
-* Disconnect Call
-* Raise Hand to Join the Floor (only for webinar mode)
+    Create Virtual Rooms using the REST video API. 
 
-## For Moderators only
-* Record Session
-* Mute Room
-* Mute Participant-Audio
-* Mute Participant-Video
-* Drop Participant from room
-* Allow/deny Participant’s Raised Hand Request (only for webinar mode)
-* Revoke Allowed Raised Hand Request (only for webinar mode)
+    Obtain the essential Room Credentials (Room ID) for secure access. 
 
-> For more information, pls visit our Developer Center https://www.enablex.io/developer/video/solutions/video-ui-kit/ios-video-ui-kit/
+    Seamlessly Join Virtual Rooms as either a moderator or participant. 
 
+Experience a wide array of features designed for both Participants and Moderators: 
+
+For Participants and Moderators: 
+
+    Mute Self-Audio: Take control of your audio input. 
+
+    Mute Self-Video: Manage your video feed at your convenience. 
+
+    Switch Camera: Toggle between front and rear cameras. 
+
+    Switch Audio Device: Easily switch between different audio devices. 
+
+    Group and Private Chat: Engage in interactive chat sessions. 
+
+Additional capabilities for Participants: 
+
+    Participant List: View and manage participants in the call. 
+
+    Switch Layout: Customize the call layout to your preference. 
+
+    Disconnect Call: End the call when needed. 
+
+    Raise Hand to Join the Floor (only available in webinar mode): Indicate your desire to participate actively. 
+
+Exclusive features for Moderators: 
+
+    Record Session: Capture valuable moments during the session. 
+
+    Mute Room: Control the audio within the virtual room. 
+
+    Mute Participant-Audio: Manage audio output for specific participants. 
+
+    Mute Participant-Video: Control video visibility for participants. 
+
+    Drop Participant from room: Remove unwanted participants. 
+
+    Allow/Deny Participant’s Raised Hand Request (only available in webinar mode): Regulate participant interactions. 
+
+    Revoke Allowed Raised Hand Request (only available in webinar mode): Manage participant engagement. 
+
+For more detailed information, please visit our comprehensive Developer Center at https://www.enablex.io/developer/video/solutions/video-ui-kit/ios-video-ui-kit/. Explore the capabilities of the EnableX Video Calling Android app with UIKit and enhance your real-time communication experiences. 
 ## 1. Get started
 
 ### 1.1 Prerequisites
