@@ -52,7 +52,7 @@ Exclusive features for Moderators:
 
     Revoke Allowed Raised Hand Request (only available in webinar mode): Manage participant engagement. 
 
-For more detailed information, please visit our comprehensive Developer Center at https://www.enablex.io/developer/video/solutions/video-ui-kit/ios-video-ui-kit/. Explore the capabilities of the EnableX Video Calling Android app with UIKit and enhance your real-time communication experiences. 
+For more detailed information, please visit our comprehensive Developer Center at https://developer.enablex.io/docs/guides/ui-kit-guide/android-ui-kit-guide/index/. Explore the capabilities of the EnableX Video Calling Android app with UIKit and enhance your real-time communication experiences. 
 ## 1. Get started
 
 ### 1.1 Prerequisites
@@ -85,7 +85,7 @@ An Application Server is required for your Android App to communicate with Enabl
 Note the following:
 •	You need to use App ID and App Key to run this Service.
 •	Your Android Client EndPoint needs to connect to this Service to create Virtual Room and Create Token to join the session.
-•	Application Server is created using [EnableX Server API](https://www.enablex.io/developer/video-api/server-api) while Rest API Service helps in provisioning, session access and post-session reporting.
+•	Application Server is created using [EnableX Server API](https://developer.enablex.io/docs/references/apis/video-api/index/) while Rest API Service helps in provisioning, session access and post-session reporting.
 
 If you would like to test the quality of EnableX video call before setting up your own application server,  you can run the test on our pre-configured environment. Refer to point 2 for more details on this.
 
@@ -208,8 +208,8 @@ userList.setImage(R.drawable.participant_icon)
 setting.configureTopOptionList(listOf<EnxButton>(menu,userList)) 
 
 # For more check this below document
-* Documentation: https://www.enablex.io/developer/video/solutions/video-ui-kit/android-video-ui-kit/
-* Download: https://www.enablex.io/developer/video/solutions/video-ui-kit/android-video-ui-kit/
+* Documentation: https://developer.enablex.io/docs/guides/ui-kit-guide/android-ui-kit-guide/index/
+* Download: https://developer.enablex.io/docs/guides/ui-kit-guide/android-ui-kit-guide/index/
 
 
 ## 4. Support
