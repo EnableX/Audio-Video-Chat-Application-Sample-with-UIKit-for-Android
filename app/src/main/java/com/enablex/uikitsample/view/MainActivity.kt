@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.enablex.enxuikit_android.observer.EnxVideoStateObserver
+import com.enablex.enxuikit_android.utility.EnxSetting
 import com.enablex.enxuikit_android.view.EnxVideoView
 import com.enablex.uikitsample.R
 import org.json.JSONObject
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity(), EnxVideoStateObserver {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         token = intent.getStringExtra("token").toString()
-        enxVideoView = EnxVideoView(this,token,this)
+        enxVideoView = EnxVideoView(this,token,this,"")
         val rlp = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT)
         this.addContentView(enxVideoView,rlp)
     }
@@ -41,6 +42,13 @@ class MainActivity : AppCompatActivity(), EnxVideoStateObserver {
         }catch (ex: Exception){
             ex.printStackTrace()
         }
+    }
+
+    override fun onPageSlide(pageName: EnxSetting.EnxPageSlideEventName, isShow: Boolean) {
+    }
+
+    override fun onUserDataReceived(jsonObject: JSONObject) {
+        TODO("Not yet implemented")
     }
 
     override fun connectError(jsonObject: JSONObject) {

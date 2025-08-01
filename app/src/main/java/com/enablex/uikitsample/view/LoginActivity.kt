@@ -20,8 +20,10 @@ import com.enablex.uikitsample.network.RetrofitHelper
 import com.enablex.uikitsample.utility.JsonParser
 import com.enablex.uikitsample.utility.Utils
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import retrofit2.await
 
@@ -51,22 +53,27 @@ class LoginActivity : AppCompatActivity() {
            EnxLoader.showDialog(this,false)
             EnxLoader.setMessage("Please wait...")
             val apiClient = RetrofitHelper.getClient().create(ApiClient::class.java)
-            GlobalScope.launch {
-                val result = apiClient.createRoom(JsonParser.getParams())
-
-                if (result != null) {
-                    EnxLoader.hideDialog()
-
-                    if(JSONObject(result.toString()).getInt("result")==0) {
-                        roomId = JsonParser.getRoomId(result.toString())
-                        binding.enterRoomId.text= Editable.Factory.getInstance().newEditable(roomId)
-
-                    }else{
-                        Toast.makeText(this@LoginActivity,"something went wrong",Toast.LENGTH_LONG).show()
-
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val result = apiClient.createRoom(JsonParser.getParams())
+                    
+                    withContext(Dispatchers.Main) {
+                        EnxLoader.hideDialog()
+                        
+                        if (result != null) {
+                            if(JSONObject(result.toString()).getInt("result")==0) {
+                                roomId = JsonParser.getRoomId(result.toString())
+                                binding.enterRoomId.text = Editable.Factory.getInstance().newEditable(roomId)
+                            } else {
+                                Toast.makeText(this@LoginActivity,"something went wrong",Toast.LENGTH_LONG).show()
+                            }
+                        }
                     }
-
-
+                } catch (e: Exception) {
+                    withContext(Dispatchers.Main) {
+                        EnxLoader.hideDialog()
+                        Toast.makeText(this@LoginActivity,"Network error",Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         } catch (ex: Exception) {
@@ -81,7 +88,8 @@ class LoginActivity : AppCompatActivity() {
             EnxLoader.showDialog(this,false)
             EnxLoader.setMessage("Please wait...")
             val apiClient = RetrofitHelper.getClient().create(ApiClient::class.java)
-            GlobalScope.launch {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
                     val tokenResult = apiClient.createToken(
                         JsonParser.getTokenParams(
                             roomId,
@@ -89,16 +97,25 @@ class LoginActivity : AppCompatActivity() {
                             role
                         )
                     )
-                    if (tokenResult != null) {
+                    
+                    withContext(Dispatchers.Main) {
                         EnxLoader.hideDialog()
-                        val token = JsonParser.getToken(tokenResult.toString())
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        intent.putExtra("token", token)
-                        startActivity(intent)
-                        finish()
+                        
+                        if (tokenResult != null) {
+                            val token = JsonParser.getToken(tokenResult.toString())
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            intent.putExtra("token", token)
+                            startActivity(intent)
+                            finish()
+                        }
                     }
-
+                } catch (e: Exception) {
+                    withContext(Dispatchers.Main) {
+                        EnxLoader.hideDialog()
+                        Toast.makeText(this@LoginActivity,"Network error",Toast.LENGTH_LONG).show()
+                    }
                 }
+            }
 
         } catch (ex: Exception) {
             ex.printStackTrace()

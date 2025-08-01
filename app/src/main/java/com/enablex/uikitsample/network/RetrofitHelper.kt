@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit
 object RetrofitHelper {
     //
     private const val baseUrl:String = "https://demo.enablex.io/"
-    private const val  kAppId:String = "AppId";
-    private const val  kAppkey:String = "AppKey";
+    private const val  kAppId:String = "api-id";
+    private const val  kAppkey:String = "api-key";
 
 
     fun getClient(): Retrofit {

@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# ExoPlayer - Keep ExoPlayer classes for EnableX UIKit
+-keep class com.google.android.exoplayer2.** { *; }
+-dontwarn com.google.android.exoplayer2.**
